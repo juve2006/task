@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 2</title>
+</head>
+
+<body>
+	<pre>
+		Задачки по функциям-конструкторам
+    </pre>
+	<script>
+		//1
+		function Calculator() {
+			this.read = function () {
+				this.a = +prompt('vvedite pervoe chislo');
+				this.b = +prompt('vvedite vtoroe chislo');
+			};
+			this.sum = function () {
+				return this.a + this.b;
+			};
+			this.mul = function () {
+				return this.a * this.b;
+			};
+		}
+
+		let test = new Calculator();
+		test.read();
+
+		alert("Sum=" + test.sum());
+		alert("Mul=" + test.mul());
+
+		//2
+		function Accumulator(startingValue) {
+			this.value = startingValue;
+
+			this.read = function () {
+				this.value += +prompt('vvedite chislo');
+			};
+		}
+		let accumulator = new Accumulator(21);
+
+		accumulator.read();
+		accumulator.read();
+
+		alert(accumulator.value);
+
+	</script>
+</body>
+
+</html>
